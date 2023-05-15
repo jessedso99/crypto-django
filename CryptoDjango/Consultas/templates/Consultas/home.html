@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- <link rel="stylesheet" href="estilo"> -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Django</title>
+</head>
+<body>
+  <div>
+    <h1>Crypto Django</h1>
+    <form method="POST" action="{% url 'teste2' %}">
+      {% csrf_token %}
+      <label> Pick a Token</label>
+      <input type="submit" name="value1" value="Consultar"/>
+      <input list="token_list" name="tecnologias">
+      <datalist name="tecno" id="token_list" placeholder="Firefox">
+        {% for values in tokens1 %}
+          <option value={{ values }}></option>
+        {% endfor %}
+        </datalist>  
+    </form>
+  </div>
+  <br>
+  <div>
+    <h1>Top 10 Cryptos: </h1>
+    <ol>
+    {% for top10 in tokensTop10 %}
+        <li> {{ top10 }} </li>
+    {% endfor %}
+    </ol>
+  </div>
+</body>
+</html>

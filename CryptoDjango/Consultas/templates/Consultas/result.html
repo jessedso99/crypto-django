@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- <link rel="stylesheet" href="estilo.css"> -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RESULT</title>
+</head>
+<body>
+  <h2>{{now}}</h2><br>
+  <h2>Token: {{z}} ({{y}}) </h2>
+  <h2>Valor: $ {{x}} </h2><br>
+  <p> <img src= {{logo}} > </p><br>
+  <h3><div id="result_desc"> {{desc}} </div></h3><br>
+  <form method="POST" action="http://127.0.0.1:8000/home/">
+    {% csrf_token %}
+    <input type="submit" name="btn1" value="Voltar">
+  </form>
+</body>
+</html>
